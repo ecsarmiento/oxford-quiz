@@ -1,7 +1,7 @@
 // === QUIZ DATA — All 60 Questions with Answers & Points ===
 const quizData = [
   { q: "A descriptive text about a person tells about:", opts: ["only their job", "looks, likes, dislikes, and what they do", "only their age", "only where they live"], ans: 1, pts: 10 },
-  { q: "Uncle Walid usually wears a ____, but in the photo he wears a T-shirt.", opts: ["jacket", "sweater", "coat", "shirt"], ans: 3, pts: 10 },
+  { q: "Uncle Walid usually wears a 👴👕, but in the photo he wears a 👔.", opts: ["jacket", "sweater", "coat", "shirt"], ans: 3, pts: 10 },
   { q: "To make adjectives stronger, you can use:", opts: ["very and really", "fast and slow", "nice and good", "happy and sad"], ans: 0, pts: 10 },
   { q: "Which phrase describes facial hair above the lip?", opts: ["a beard", "a moustache", "glasses", "sideburns"], ans: 1, pts: 10 },
   { q: "Which phrase describes hair on the chin and cheeks?", opts: ["a moustache", "a beard", "straight hair", "curly hair"], ans: 1, pts: 10 },
@@ -12,7 +12,7 @@ const quizData = [
   { q: "Farook’s grandpa wears ____ to help him read.", opts: ["glasses", "a hat", "earrings", "a scarf"], ans: 0, pts: 10 },
   { q: "Which word is NOT used to describe Grandpa?", opts: ["old", "tall", "curly", "straight"], ans: 2, pts: 10 },
   { q: "Grandpa’s hair is:", opts: ["black", "white", "brown", "blonde"], ans: 1, pts: 10 },
-  { q: "Mrs. Park looks at a photo of:", opts: ["her daughter", "herself when she was young", "her friend", "her sister"], ans: 1, pts: 10 },
+  { q: "Mrs. Park looks at a photo of :", opts: ["her daughter", "herself when she was young", "her friend", "her sister"], ans: 1, pts: 10 },
   { q: "In the photo, her hair was:", opts: ["short and curly", "black and straight, long ponytail", "white and short", "brown and wavy"], ans: 1, pts: 10 },
   { q: "Now her hair is:", opts: ["black and long", "shoulder-length and white", "curly and brown", "the same as before"], ans: 1, pts: 10 },
   { q: "What is still the same?", opts: ["her hair", "her smile", "her glasses", "her age"], ans: 1, pts: 10 },
