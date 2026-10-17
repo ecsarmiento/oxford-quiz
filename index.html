@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oxford Skills World — Reading & Writing Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <header>
+      <h1>📚 Oxford Skills World</h1>
+      <p>Reading & Writing Challenge</p>
+      <div class="score-board">
+        <span>Score: <strong id="score">0</strong> / <span id="total">60</span></span>
+        <span>Points: <strong id="points">0</strong></span>
+      </div>
+      <div class="progress-bar"><div id="progress"></div></div>
+    </header>
+
+    <main id="quiz-container">
+      <!-- Start Screen -->
+      <div id="start-screen" class="screen active">
+        <h2>Ready to test your skills? 🧠✨</h2>
+        <input type="text" id="student-name" placeholder="Enter your name" required>
+        <button id="start-btn" class="btn primary">Start Quiz 🚀</button>
+      </div>
+
+      <!-- Question Screen -->
+      <div id="question-screen" class="screen">
+        <div class="q-header">
+          <span id="q-num">Question 1 of 60</span>
+          <button id="prev-btn" class="btn small">← Prev</button>
+          <button id="next-btn" class="btn small">Next →</button>
+        </div>
+        <h3 id="question-text"></h3>
+        <div id="options" class="options-grid"></div>
+        <div id="feedback" class="feedback"></div>
+      </div>
+
+      <!-- Finish Screen -->
+      <div id="finish-screen" class="screen">
+        <h2>🎉 Great Job!</h2>
+        <p id="final-message"></p>
+        <div class="final-score">
+          <p>Final Score: <strong id="final-score-val">0</strong>/60</p>
+          <p>Total Points: <strong id="final-points">0</strong></p>
+          <p>Percentage: <strong id="percent">0</strong>%</p>
+        </div>
+        <button id="save-score-btn" class="btn success">Save My Score 💾</button>
+        <button id="restart-btn" class="btn">Try Again 🔄</button>
+        <h3>🏆 Top Scores</h3>
+        <ul id="leaderboard"></ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- Hidden Audio Elements -->
+  <audio id="snd-correct" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3" type="audio/mpeg">
+  <audio id="snd-wrong" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" type="audio/mpeg">
+  <audio id="snd-complete" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+
+  <script src="script.js"></script>
+</body>
+</html>

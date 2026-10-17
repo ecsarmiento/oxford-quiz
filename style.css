@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --prim: #4f46e5; --sec: #10b981; --warn: #f59e0b; --err: #ef4444;
+  --light: #f0f9ff; --dark: #1e293b; --card: #ffffff;
+  --grad: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
+}
+body {
+  font-family: 'Poppins', sans-serif; background: linear-gradient(120deg, #eef2ff, #e0e7ff);
+  min-height: 100vh; color: var(--dark); position: relative; overflow-x: hidden;
+}
+.stars {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(79,70,229,0.15) 1px, transparent 1px);
+  background-size: 30px 30px; animation: bgMove 60s linear infinite;
+}
+@keyframes bgMove {0{transform:translateY(0)}100%{transform:translateY(30px)}}
+.container {
+  max-width: 850px; margin: 0 auto; padding: 2rem 1rem; position: relative; z-index: 2;
+}
+header { text-align: center; margin-bottom: 2rem; }
+h1 { font-size: 2rem; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.score-board {
+  display: flex; gap: 2rem; justify-content: center; margin: 1rem 0; font-weight: 600;
+}
+.progress-bar {
+  height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; margin-top: 0.5rem;
+}
+#progress {
+  height: 100%; background: var(--grad); width: 0%; transition: width 0.4s ease;
+}
+.screen { display: none; animation: fadeIn 0.5s ease; }
+.screen.active { display: block; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:none} }
+.btn {
+  padding: 0.85rem 2rem; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s ease; margin: 0.5rem; font-family: inherit;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.btn.primary { background: var(--grad); color: white; }
+.btn.success { background: var(--sec); color: white; }
+.btn.small { padding: 0.5rem 1rem; font-size: 0.9rem; }
+input {
+  padding: 0.9rem; width: 100%; max-width: 350px; border: 2px solid #ddd; border-radius: 10px;
+  font-size: 1rem; margin: 1rem 0; transition: border 0.3s;
+}
+input:focus { outline: none; border-color: var(--prim); box-shadow: 0 0 0 4px rgba(79,70,229,0.2); }
+.q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.options-grid { display: grid; gap: 0.8rem; margin: 1.5rem 0; }
+.option-btn {
+  padding: 1.1rem 1.5rem; background: var(--card); border: 2px solid #e5e7eb; border-radius: 12px;
+  text-align: left; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;
+}
+.option-btn:hover:not(.disabled) {
+  border-color: var(--prim); background: #eef2ff; transform: translateX(5px);
+  filter: brightness(1.05);
+}
+.option-btn.correct {
+  border-color: var(--sec); background: #d1fae5; color: #065f46; font-weight: 600;
+  animation: pop 0.4s ease;
+}
+.option-btn.wrong {
+  border-color: var(--err); background: #fee2e2; color: #991b1b;
+}
+.option-btn.disabled { pointer-events: none; opacity: 0.7; }
+@keyframes pop { 0%{transform:scale(1)} 50%{transform:scale(1.03)} 100%{transform:scale(1)} }
+.feedback { padding: 1rem; border-radius: 10px; margin-top: 1rem; font-weight: 600; display: none; }
+.feedback.show { display: block; animation: fadeIn 0.3s; }
+.feedback.correct { background: #d1fae5; color: #065f46; }
+.feedback.wrong { background: #fee2e2; color: #991b1b; }
+.final-score { background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow); margin: 1.5rem 0; }
+#leaderboard { list-style: none; margin-top: 1rem; }
+#leaderboard li { padding: 0.6rem; border-bottom: 1px solid #eee; }
+.confetti {
+  position: fixed; width: 10px; height: 10px; opacity: 0; animation: confettiFall 3s ease-out forwards;
+}
+@keyframes confettiFall {
+  0%{transform:translateY(-10px) rotate(0); opacity:1}
+  100%{transform:translateY(100vh) rotate(720deg); opacity:0}
+}
